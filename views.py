@@ -22,5 +22,3 @@ def predictor(request):
             y_pred = 'Potable'
         return render(request, 'main.html', {'result' : y_pred})
     return render(request, 'main.html')
-if __name__ == '__main__':
-    predictor()
