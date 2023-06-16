@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Potability Application</title>
+    <style type="text/css">
+        .button {
+            align-self: center;
+          border-radius: 4px;
+          background-color: #f4511e;
+          border: none;
+          color: #FFFFFF;
+          text-align: center;
+          font-size: 28px;
+          padding: 5px;
+          width: 200px;
+          transition: all 0.5s;
+          cursor: pointer;
+          margin: 30px;
+        }
+
+        h1{
+            text-align: center;
+        }
+        
+        .button span {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+        
+        .button span:after {
+          content: '\00bb';
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+        
+        .button:hover span {
+          padding-right: 25px;
+        }
+        
+        .button:hover span:after {
+          opacity: 1;
+          right: 0;
+        }
+
+        label{
+            text-align: center;
+            width: 200px;
+            display: inline-block;
+            margin: 4px;
+        }
+        form{
+            align-self: center;
+            border-radius: 10px;
+            white-space: nowrap;
+            text-align: justify;
+            width: 290px;
+            padding: 4px;
+
+        }
+        body
+        {   
+            background-image: linear-gradient(
+                to bottom,
+                rgba(255, 68, 0, 0.5),
+                rgba(234, 234, 246, 0.975)
+            );
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center"></div>
+            <div class="col-6"></div>
+    <h1>Water Potability Application</h1>
+    <hr>
+    {% if result %}
+        <h1>The water of water body you want to check is : {{result}}</h1>
+    {% endif %}
+        <center>
+            <form action="" method="POST">
+                    {% csrf_token %}
+                    <label for="pH">Enter pH value :</label>
+                    <input type="number" name="pH" placeholder="pH" required><br>
+                    <label for="Hardness">Enter Hardness value :</label>
+                    <input type="number" name="Hardness" placeholder="Hardness" required><br>
+                    <label for="Solids">Solids value :</label>
+                    <input type="number" name="Solids" placeholder="Solids" required><br>
+                    <label for="Chloramines">Chloramines value :</label>
+                    <input type="number" name="Chloramines" placeholder="Chloramines" required><br>
+                    <label for="Sulfate">Sulfate value :</label>
+                    <input type="number" name="Sulfate" placeholder="Sulfate" required><br>
+                    <label for="Conductivity">Conductivity value :</label>
+                    <input type="number" name="Conductivity" placeholder="Conductivity" required><br>
+                    <label for="Organic_carbon">Organic_carbon value :</label>
+                    <input type="number" name="Organic_carbon" placeholder="Organic_carbon" required><br>
+                    <label for="Trihalomethanes">Trihalomethanes value :</label>
+                    <input type="number" name="Trihalomethanes"  placeholder="Trihalomethanes" required><br>
+                    <label for="Turbidity">Turbidity value :</label>
+                    <input type="number" name="Turbidity" placeholder="Turbidity" required><br>
+                    <button class="button">Predict</button>
+                </form>
+            </center>
+    </div>
+</body>
+</html>
