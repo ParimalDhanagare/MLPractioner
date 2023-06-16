@@ -21,4 +21,4 @@ def predictor(request):
         elif y_pred[0] == 1:
             y_pred = 'Potable'
         return render(request, 'main.html', {'result' : y_pred})
-    return render(request, 'main.html')
+return render(request, 'main.html')
