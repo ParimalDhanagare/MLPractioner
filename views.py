@@ -1,5 +1,4 @@
 from django.shortcuts import render
-import streamlit as st
 
 from joblib import load
 model = load('RandomForest.pkl','rb')
