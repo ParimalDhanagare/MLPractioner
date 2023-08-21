@@ -4,11 +4,16 @@ import streamlit as st
 
 loaded_model=pickle.load(open("Bangalore_House_Price_prediction/bangalore_house_price_prediction.pkl",'rb'))
 
-def water_quality(input_data):
-    input_data_as_numpy_array=np.asarray(input_data)
-    input_data_reshaped=input_data_as_numpy_array.reshape(1,-1)
-    prediction=loaded_model.predict(input_data_reshaped)
-    print(prediction)
+def predict_price(location,sqft,bath,bhk):
+    loc_index = np.where(x.columns==location)[0]
+    
+    x1 = np.zeros(len(x.columns))
+    x1[0] = sqft
+    x1[1] = bath
+    x1[2] = bhk
+    if loc_index.size >= 0:
+        x1[loc_index] = 1
+    return lr_clf.predict([x1])[0]
 
 
 def main():
@@ -22,7 +27,7 @@ def main():
     test_result=''
 
     if st.button('Predict House Price'):
-        test_result=water_quality([location,sqft,bathrooms,bhk])
+        test_result=predict_price([location,sqft,bathrooms,bhk])
 
         st.success(test_result)
 
