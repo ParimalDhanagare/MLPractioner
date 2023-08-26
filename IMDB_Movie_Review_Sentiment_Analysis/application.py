@@ -2,7 +2,7 @@ import pickle
 import numpy as np
 import streamlit as st
 
-loaded_model=pickle.load(open("C:/Users/parim/IMDB sentiment analysis/models/logistic_regression_model.pkl",'rb'))
+loaded_model=pickle.load(open("IMDB_Movie_Review_Sentiment_Analysis/logistic_regression_model.pkl",'rb'))
 
 def review_sentiment(input_data):
     input_data_as_numpy_array=np.asarray(input_data)
