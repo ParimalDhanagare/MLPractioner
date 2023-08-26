@@ -31,7 +31,7 @@ def main():
     test_result=''
 
     if st.button('Predict movie sentiment'):
-        test_result=review_sentiment([movie_review])
+        test_result=review_sentiment([movie_name,movie_review])
 
         st.success(test_result)
 
