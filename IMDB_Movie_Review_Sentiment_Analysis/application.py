@@ -12,7 +12,7 @@ def review_sentiment(input_data):
 
     if (prediction[0]==0):
         return "The sentiment about movie is negative,You should not watch this movie"
-    else:
+    if (prediction[0]==1):
         return "The sentiment about movie is positive, You should watch this movie"
 
 def main():
