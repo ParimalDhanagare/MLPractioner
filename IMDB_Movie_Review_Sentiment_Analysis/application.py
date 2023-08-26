@@ -10,10 +10,10 @@ def review_sentiment(input_data):
     prediction=loaded_model.predict(input_data)
     print(prediction)
 
-    if (prediction[0]==0):
-        return "The sentiment about the movie is negative, You should not watch this movie"
     if (prediction[0]==1):
         return "The sentiment about the movie is positive, You should watch this movie"
+    elif (prediction[0]==0):
+        return "The sentiment about the movie is negative, You should not watch this movie"
 
 def main():
     st.title("IMDB Movie Review Sentiment App")
