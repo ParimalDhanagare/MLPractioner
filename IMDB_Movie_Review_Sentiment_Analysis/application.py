@@ -5,14 +5,14 @@ import streamlit as st
 loaded_model=pickle.load(open("IMDB_Movie_Review_Sentiment_Analysis/Decision_Tree_model.pkl",'rb'))
 
 def review_sentiment(input_data):
-    # input_data_as_numpy_array=np.asarray(input_data)
-    # input_data_reshaped=input_data_as_numpy_array.reshape(1,-1)
-    prediction=loaded_model.predict(input_data)
+    input_data_as_numpy_array=np.asarray(input_data)
+    input_data_reshaped=input_data_as_numpy_array.reshape(1,-1)
+    prediction=loaded_model.predict(input_data_reshaped)
     print(prediction)
 
     if (prediction[0]==1):
         return "The sentiment about the movie is positive, You should watch this movie"
-    elif (prediction[0]==0):
+    else (prediction[0]==0):
         return "The sentiment about the movie is negative, You should not watch this movie"
 
 def main():
