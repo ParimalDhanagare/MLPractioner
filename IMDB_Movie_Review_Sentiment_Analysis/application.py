@@ -2,7 +2,7 @@ import pickle
 import numpy as np
 import streamlit as st
 
-loaded_model=pickle.load(open("IMDB_Movie_Review_Sentiment_Analysis/logistic_regression_model.pkl",'rb'))
+loaded_model=pickle.load(open("IMDB_Movie_Review_Sentiment_Analysis/Decision_Tree_model.pkl",'rb'))
 
 def review_sentiment(input_data):
     # input_data_as_numpy_array=np.asarray(input_data)
@@ -24,7 +24,7 @@ def main():
     test_result=''
 
     if st.button('Predict movie sentiment'):
-        test_result=review_sentiment([movie_name,movie_review])
+        test_result=review_sentiment([movie_review])
 
         st.success(test_result)
 
