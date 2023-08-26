@@ -7,7 +7,7 @@ loaded_model=pickle.load(open("IMDB_Movie_Review_Sentiment_Analysis/logistic_reg
 def review_sentiment(input_data):
     input_data_as_numpy_array=np.asarray(input_data)
     input_data_reshaped=input_data.reshape(-1,1)
-    prediction=loaded_model.predict(input_data)
+    prediction=loaded_model.predict(input_data_reshaped)
     print(prediction)
 
     if (prediction[0]==0):
