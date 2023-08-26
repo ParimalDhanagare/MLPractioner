@@ -5,15 +5,15 @@ import streamlit as st
 loaded_model=pickle.load(open("IMDB_Movie_Review_Sentiment_Analysis/logistic_regression_model.pkl",'rb'))
 
 def review_sentiment(input_data):
-    input_data_as_numpy_array=np.asarray(input_data).str()
-    input_data_reshaped=input_data_as_numpy_array.reshape(1,-1)
+    # input_data_as_numpy_array=np.asarray(input_data)
+    input_data_reshaped=input_data.reshape(1,-1)
     prediction=loaded_model.predict(input_data_reshaped)
     print(prediction)
 
     if (prediction[0]==0):
         return "The sentiment about movie is negative,You should not watch this movie"
     else:
-        return"The sentiment about movie is positive , You should watch this movie"
+        return"The sentiment about movie is positive, You should watch this movie"
 
 def main():
     st.title("IMDB Movie Review Sentiment App")
@@ -30,7 +30,7 @@ def main():
 
     test_result=''
 
-    if st.button('Predict Water Quality'):
+    if st.button('Predict movie sentiment'):
         test_result=review_sentiment([movie_name,movie_review])
 
         st.success(test_result)
