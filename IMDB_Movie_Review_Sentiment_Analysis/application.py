@@ -8,12 +8,12 @@ def review_sentiment(input_data):
     # input_data_as_numpy_array=np.asarray(input_data)
     # input_data_reshaped=input_data_as_numpy_array.reshape(1,-1)
     prediction=loaded_model.predict(input_data)
-    print(str(prediction))
+    print(prediction)
 
     if (prediction[0]==0):
-        return "The sentiment about movie is negative,You should not watch this movie"
+        return "The sentiment about the movie is negative, You should not watch this movie"
     if (prediction[0]==1):
-        return "The sentiment about movie is positive, You should watch this movie"
+        return "The sentiment about the movie is positive, You should watch this movie"
 
 def main():
     st.title("IMDB Movie Review Sentiment App")
