@@ -20,13 +20,6 @@ def main():
 
     movie_name=st.text_input('Enter movie name',placeholder="Enter movie name")
     movie_review=st.text_input('Enter movie review',placeholder="Enter movie Review")
-    # Solids=st.text_input('Solids')
-    # Chloramines=st.text_input('Chloramines')
-    # Sulphate=st.text_input('Sulphate')
-    # Conductivity=st.text_input('Conductivity')
-    # Organic_carbon=st.text_input('Organic Carbon Value')
-    # Trihalomethanes=st.text_input('Trihalomethanes Value')
-    # Turbidity=st.text_input('Turbidity')
 
     test_result=''
 
