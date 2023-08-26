@@ -5,9 +5,9 @@ import streamlit as st
 loaded_model=pickle.load(open("IMDB_Movie_Review_Sentiment_Analysis/logistic_regression_model.pkl",'rb'))
 
 def review_sentiment(input_data):
-    # input_data_as_numpy_array=np.asarray(input_data)
-    # input_data_reshaped=input_data_as_numpy_array.reshape(1,-1)
-    prediction=loaded_model.predict(input_data)
+    input_data_as_numpy_array=np.asarray(input_data).astype('String')
+    input_data_reshaped=input_data_as_numpy_array.reshape(1,-1)
+    prediction=loaded_model.predict(input_data_reshaped)
     print(prediction)
 
     if (prediction[0]==0):
