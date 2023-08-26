@@ -18,7 +18,7 @@ def review_sentiment(input_data):
 def main():
     st.title("IMDB Movie Review Sentiment App")
 
-    # movie_name=st.text_input('Enter movie name',placeholder="Enter movie name")
+    movie_name=st.text_input('Enter movie name',placeholder="Enter movie name")
     movie_review=st.text_input('Enter movie review',placeholder="Enter movie Review")
 
     test_result=''
