@@ -25,7 +25,7 @@ def main():
     test_result=''
 
     if st.button('Predict House Price'):
-        test_result=predict_price([[location,sqft,bathrooms,bhk]])
+        test_result=predict_price(location,sqft,bathrooms,bhk)
 
         st.success(test_result)
 
