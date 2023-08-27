@@ -5,7 +5,7 @@ import streamlit as st
 loaded_model=pickle.load(open("Bangalore_House_Price_prediction/bangalore_house_price_prediction.pkl",'rb'))
 
 def predict_price(input_data):
-    input_data = np.asarray(input_data,dtype="object")
+    input_data_as_numpy_array = np.asarray(input_data,dtype="object")
     # location_arr=np.asarray(location,dtype="object")
     # sqft_arr=np.asarray(sqft,dtype="object")
     # bathrooms_arr=np.asarray(bathrooms,dtype="object")
