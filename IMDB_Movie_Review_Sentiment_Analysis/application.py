@@ -1,6 +1,8 @@
 import pickle
 import numpy as np
 import streamlit as st
+from PIL import Image
+
 
 loaded_model=pickle.load(open("IMDB_Movie_Review_Sentiment_Analysis/logistic_regression_model.pkl",'rb'))
 
@@ -17,7 +19,9 @@ def review_sentiment(input_data):
 
 def main():
     st.title("IMDB Movie Review Sentiment App")
+    image = Image.open('sunrise.jpg')
 
+    st.image(image, caption='Sunrise by the mountains')
     movie_name=st.text_input('Enter movie name',placeholder="Enter movie name")
     movie_review=st.text_input('Enter movie review',placeholder="Enter movie Review")
 
