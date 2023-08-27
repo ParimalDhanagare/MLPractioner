@@ -5,9 +5,9 @@ import streamlit as st
 loaded_model=pickle.load(open("Bangalore_House_Price_prediction/bangalore_house_price_prediction.pkl",'rb'))
 
 def predict_price(input_data):
-    # input_data_as_numpy_array=np.asarray(input_data)
-    # input_data_reshaped=input_data_as_numpy_array.reshape(1,-1)
-    prediction=loaded_model.predict(input_data)
+    input_data_as_numpy_array=np.asarray(input_data)
+    input_data_reshaped=input_data_as_numpy_array.reshape(1,-1)
+    prediction=loaded_model.predict(input_data_reshaped)
     print(prediction)
 
 
