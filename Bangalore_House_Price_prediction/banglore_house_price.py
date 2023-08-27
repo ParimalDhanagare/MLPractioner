@@ -6,8 +6,8 @@ loaded_model=pickle.load(open("Bangalore_House_Price_prediction/bangalore_house_
 
 def predict_price(input_data):
     input_data_as_numpy_array=np.asarray(input_data,dtype="object")
-    input_data_reshaped=input_data_as_numpy_array.reshape(1,-1)
-    prediction=loaded_model.predict(input_data_reshaped)
+    # input_data_reshaped=input_data_as_numpy_array.reshape(1,-1)
+    prediction=loaded_model.predict(input_data)
     print(prediction)
 
 
@@ -22,7 +22,7 @@ def main():
     test_result=''
 
     if st.button('Predict House Price'):
-        test_result=predict_price([location,sqft,bathrooms,bhk])
+        test_result=predict_price([[location,sqft,bathrooms,bhk]])
 
         st.success(test_result)
 
