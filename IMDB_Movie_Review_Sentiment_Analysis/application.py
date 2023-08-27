@@ -19,9 +19,9 @@ def review_sentiment(input_data):
 
 def main():
     st.title("IMDB Movie Review Sentiment App")
-    image = Image.open('sunrise.jpg')
+    image = Image.open('IMDB_Movie_Review_Sentiment_Analysis/sentiment analysis logo.png')
 
-    st.image(image, caption='Sunrise by the mountains')
+    st.image(image)
     movie_name=st.text_input('Enter movie name',placeholder="Enter movie name")
     movie_review=st.text_input('Enter movie review',placeholder="Enter movie Review")
 
