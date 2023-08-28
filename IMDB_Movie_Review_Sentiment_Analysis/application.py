@@ -31,12 +31,9 @@ def main():
     test_result=''
 
     if st.button('Predict movie sentiment'):
-        if (movie_name == "") or (movie_review == ""):
-            st.success("Please fill the remaining details.")
         if (movie_name == "") and (movie_review == ""):
             st.success("Both the fields are required..")
         else:
-            
             test_result=review_sentiment([movie_review])
     
             st.success(test_result)
