@@ -26,14 +26,15 @@ def main():
     movie_name=st.text_input('Enter movie name',placeholder="Enter movie name")
     movie_review=st.text_input('Enter movie review',placeholder="Enter movie Review")
 
-    if (movie_name == "") or (movie_review == ""):
-        return "Please fill the remaining details."
-    elif (movie_name == "") and (movie_review == ""):
-        return "Both the fields are required.."
+    
 
     test_result=''
 
     if st.button('Predict movie sentiment'):
+        if (movie_name == "") or (movie_review == ""):
+        return "Please fill the remaining details."
+        elif (movie_name == "") and (movie_review == ""):
+        return "Both the fields are required.."
         test_result=review_sentiment([movie_review])
 
         st.success(test_result)
