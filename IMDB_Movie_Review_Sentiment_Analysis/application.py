@@ -17,6 +17,7 @@ def review_sentiment(input_data):
     else:
         return "The sentiment about the movie is negative, You should not watch this movie"
 
+
 def main():
     st.title("IMDB Movie Review Sentiment App")
     image = Image.open('IMDB_Movie_Review_Sentiment_Analysis/sentiment analysis logo.png')
@@ -24,6 +25,11 @@ def main():
     st.image(image)
     movie_name=st.text_input('Enter movie name',placeholder="Enter movie name")
     movie_review=st.text_input('Enter movie review',placeholder="Enter movie Review")
+
+    if (movie_name == "") or (movie_review == ""):
+        return "Please fill the remaining details."
+    elif (movie_name == "") and (movie_review == "")"
+        return "Both the fields are required.."
 
     test_result=''
 
