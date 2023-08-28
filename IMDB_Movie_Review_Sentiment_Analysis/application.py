@@ -23,8 +23,8 @@ def main():
     image = Image.open('IMDB_Movie_Review_Sentiment_Analysis/sentiment analysis logo.png')
 
     st.image(image)
-    movie_name=st.text_input('Enter movie name',placeholder="Enter movie name")
-    movie_review=st.text_input('Enter movie review',placeholder="Enter movie Review")
+    movie_name=st.text_input('Movie name',placeholder="Enter movie name")
+    movie_review=st.text_input('Movie review',placeholder="Enter movie Review")
 
     
 
@@ -32,9 +32,9 @@ def main():
 
     if st.button('Predict movie sentiment'):
         if (movie_name == "") or (movie_review == ""):
-            return "Please fill the remaining details."
+            st.suceess("Please fill the remaining details.")
         elif (movie_name == "") and (movie_review == ""):
-            return "Both the fields are required.."
+            st.suceess"(Both the fields are required..")
         test_result=review_sentiment([movie_review])
 
         st.success(test_result)
