@@ -35,9 +35,11 @@ def main():
             st.success("Please fill the remaining details.")
         elif (movie_name == "") and (movie_review == ""):
             st.success("Both the fields are required..")
-        test_result=review_sentiment([movie_review])
-
-        st.success(test_result)
+        else:
+            
+            test_result=review_sentiment([movie_review])
+    
+            st.success(test_result)
 
 if __name__=='__main__':
     main()   
