@@ -32,9 +32,9 @@ def main():
 
     if st.button('Predict movie sentiment'):
         if (movie_name == "") or (movie_review == ""):
-        return "Please fill the remaining details."
+            return "Please fill the remaining details."
         elif (movie_name == "") and (movie_review == ""):
-        return "Both the fields are required.."
+            return "Both the fields are required.."
         test_result=review_sentiment([movie_review])
 
         st.success(test_result)
