@@ -34,7 +34,7 @@ def main():
         if (movie_name == "") or (movie_review == ""):
             st.suceess("Please fill the remaining details.")
         elif (movie_name == "") and (movie_review == ""):
-            st.suceess"(Both the fields are required..")
+            st.suceess("Both the fields are required..")
         test_result=review_sentiment([movie_review])
 
         st.success(test_result)
